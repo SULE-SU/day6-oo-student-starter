@@ -12,6 +12,11 @@ public class Student extends Person {
         super(id, name, age);
     }
 
+    public Klass getKlass() {
+        return klass;
+    }
+
+    @Override
     public String introduce() {
         return String.format("My name is %s. I am %s years old. I am a student. I am in class %s.", getName(), getAge(),klass.getNumber());
     }
