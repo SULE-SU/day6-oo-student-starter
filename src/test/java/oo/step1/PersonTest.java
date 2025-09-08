@@ -24,7 +24,13 @@ public class PersonTest {
         assertTrue(person.equals(person2));
     }
 
-
+    // when equals two different id person then return true
+    @Test
+    public void should_return_false_when_equals_two_different_id_person(){
+        Person person = new Person(1,"Tom",20);
+        Person person2 = new Person(2,"Tom",20);
+        assertFalse(person.equals(person2));
+    }
 
 
 }
