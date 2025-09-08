@@ -15,6 +15,15 @@ public class PersonTest {
         assertEquals("My name is Tom. I am 20 years old.",person.introduce());
     }
 
+    // when equals two same id person then return true
+    @Test
+    public void should_return_true_when_equals_two_same_id_person(){
+        Person person = new Person(1,"Tom",20);
+        Person person2 = new Person(1,"Tom",20);
+
+        assertTrue(person.equals(person2));
+    }
+
 
 
 
