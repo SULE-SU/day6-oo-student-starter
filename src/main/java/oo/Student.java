@@ -18,7 +18,13 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
-        return String.format("My name is %s. I am %s years old. I am a student. I am in class %s.", getName(), getAge(),klass.getNumber());
+        if (klass != null && klass.isLeader(this)) {
+            return String.format("My name is %s. I am %s years old. I am a student. I am the leader of class %s.", getName(), getAge(), klass.getNumber());
+        } else if (klass != null) {
+            return String.format("My name is %s. I am %s years old. I am a student. I am in class %s.", getName(), getAge(), klass.getNumber());
+        } else {
+            return String.format("My name is %s. I am %s years old. I am a student.", getName(), getAge());
+        }
     }
 
 
