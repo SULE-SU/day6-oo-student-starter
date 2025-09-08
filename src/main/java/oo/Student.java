@@ -6,13 +6,14 @@ public class Student extends Person {
     private Integer id;
     private Integer age;
     private String name;
+    private Klass klass;
 
     public Student(Integer id, String name, Integer age) {
         super(id, name, age);
     }
 
     public String introduce() {
-        return String.format("My name is %s. I am %s years old. I am a student.", getName(), getAge());
+        return String.format("My name is %s. I am %s years old. I am a student. I am in class %s.", getName(), getAge(),klass.getNumber());
     }
 
 
@@ -27,5 +28,17 @@ public class Student extends Person {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), id, age, name);
+    }
+
+    public void join(Klass klass) {
+        this.klass = klass;
+    }
+
+    public boolean isIn(Klass klass) {
+        if(this.klass == null) {
+            return false;
+        }else {
+            return this.klass.equals(klass);
+        }
     }
 }
